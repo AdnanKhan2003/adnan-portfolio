@@ -11,6 +11,7 @@ function ProjectItem({ items }) {
         <Image
           className={`${styles.project_item_img}`}
           src={items.image.src}
+          alt={items.title}
           width="300"
           height="300"
         />

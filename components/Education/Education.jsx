@@ -1,7 +1,7 @@
 "use client";
 
 import EducationItem from "./Education Item/EducationItem";
-import SchoolIcon from "@mui/icons-material/School";
+import SchoolIcon from "@material-ui/icons/School";
 
 import styles from "./Education.module.css";
 

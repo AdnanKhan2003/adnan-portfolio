@@ -1,11 +1,11 @@
-import Header from "@/components/Header/Header";
-import Hero from "@/components/Hero/Hero";
+import Header from "@/components/Header/Header.jsx";
+import Hero from "@/components/Hero/Hero.jsx";
 
 import styles from "./page.module.css";
-import Projects from "@/components/Projects/Projects";
-import Education from "@/components/Education/Education";
-import Skills from "@/components/Skills/Skills";
-import Contact from "@/components/Contact/Contact";
+import Projects from "@/components/Projects/Projects.jsx";
+import Education from "@/components/Education/Education.jsx";
+import Skills from "@/components/Skills/Skills.jsx";
+import Contact from "@/components/Contact/Contact.jsx";
 
 export default function Home() {
   return (

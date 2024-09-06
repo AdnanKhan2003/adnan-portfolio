@@ -23,7 +23,7 @@ function Hero() {
             <h1 className={`${styles.hero_content_title}`}>Adnan Khan</h1>
             <p className={`${styles.hero_content_description}`}>
               A 19-year-old student enthusiast of web development especially
-              front-end development. I'm also open to remote work, internships,
+              front-end development. I am also open to remote work, internships,
               and collaborations so feel free to contact me.
             </p>
             <Button

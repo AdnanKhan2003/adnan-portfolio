@@ -1,0 +1,36 @@
+.button {
+  cursor: pointer;
+  border-radius: 0.4rem;
+  color: #333;
+}
+.buttton:hover {
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.8);
+}
+.button_med {
+  padding: 0.3rem 0.5rem;
+  font-size: 1.3rem;
+}
+.button_big {
+  padding: 0.4rem 0.9rem;
+  font-size: 1.2rem;
+}
+.button_small {
+  padding: 0.3rem 0.7rem;
+  font-size: 1.1rem;
+}
+
+.button_dark {
+  background-color: #227b94;
+  color: #fff;
+}
+.button_text {
+  background: none;
+  border: none;
+  color: #fff;
+}
+
+@media (max-width: 840px) {
+  .button_text {
+    color: #000;
+  }
+}

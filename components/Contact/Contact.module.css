@@ -1,0 +1,13 @@
+.contacts_container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, auto));
+  margin-bottom: 6rem;
+  justify-content: center;
+}
+
+@media (max-width: 650px) {
+  .contacts_container {
+    grid-gap: 2rem 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(65px, auto));
+  }
+}

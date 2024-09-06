@@ -1,0 +1,11 @@
+.skills {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+  grid-gap: 3.4rem 1.4rem;
+}
+
+@media (max-width: 200px) {
+  .skills {
+    grid-template-columns: auto;
+  }
+}

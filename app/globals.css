@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Poppins:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap");
+
+@font-face {
+  font-family: "Whitney Light";
+  src: url("../fonts/whitneylight.woff");
+}
+
+@font-face {
+  font-family: "Whitney Medium";
+  src: url("../fonts/whitneymedium.woff");
+}
+
+@font-face {
+  font-family: "Whitney Semibold";
+  src: url("../fonts/whitneysemibold.woff");
+}
+
+@font-face {
+  font-family: "Whitney Bold";
+  src: url("../fonts/whitneybold.woff");
+}
+
+:root {
+  --font-family-light: "Whitney Light";
+  --font-family-medium: "Whitney Medium";
+  --font-family-semibold: "Whitney Semibold";
+  --font-family-bold: "Whitney Bold";
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "SUSE", sans-serif;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+.section {
+  padding: 5rem 0;
+}
+.section_title {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.button_dark {
+  background-color: #227b94;
+}
+.text_white {
+  color: #fff;
+}
+.text_dark {
+  color: #444;
+}
+
+@media (max-width: 800px) {
+  .section_title {
+    font-size: 2.4rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .container {
+    width: 90%;
+  }
+}
+
+@media (max-width: 300px) {
+  .container {
+    width: 95%;
+  }
+  .section_title {
+    font-size: 1.6rem;
+  }
+}

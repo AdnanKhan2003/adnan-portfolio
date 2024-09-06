@@ -10,7 +10,7 @@ function ContactItem({ items, Icon }) {
       <div classNmae={`${styles.contact_items}`}>
         <Link href={items.link || ""}>
           <p className={`${styles.contact_icon_container}`}>
-            <Image src={items.Icon} />
+            <Image src={items.Icon} alt={items.title} />
           </p>
           <p>{items.title}</p>
         </Link>

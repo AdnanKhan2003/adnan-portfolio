@@ -14,6 +14,7 @@ function Hero() {
             <Image
               className={`${styles.hero_content_img}`}
               src={img}
+              alt="Adnan Khan"
               width="23px"
               height="23px"
             />

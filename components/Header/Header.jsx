@@ -26,7 +26,7 @@ function Header() {
   return (
     <nav className={`${styles.nav} container`}>
       <div className={`${styles.nav_left}`}>
-        <Image className={`${styles.nav_left_logo}`} src={logoImg} />
+        <Image className={`${styles.nav_left_logo}`} src={logoImg} alt="Logo" />
       </div>
 
       <ul ref={navLinks} className={`${styles.nav_middle} ${styles[classNav]}`}>

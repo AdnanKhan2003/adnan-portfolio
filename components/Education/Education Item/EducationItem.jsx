@@ -11,11 +11,7 @@ function EducationItem({ items, Icon }) {
       </div>
       <div className="education_content">
         <h1 className={`${styles.education_title}`}>{items.courseName}</h1>
-        <p className={`${styles.education_description}`}>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus
-          provident voluptatem voluptate magnam reprehenderit ratione impedit
-          ipsa laborum quidem voluptatibus!
-        </p>
+        <p className={`${styles.education_description}`}>{items.totalYears}</p>
       </div>
     </article>
   );

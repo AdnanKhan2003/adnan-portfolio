@@ -23,11 +23,23 @@
 .button_dark {
   background-color: #227b94;
   color: #fff;
+  transition: all 0.3s ease-in-out;
+}
+.button_dark:hover {
+  background: linear-gradient(
+    rgba(34, 123, 148, 0.9),
+    rgba(34, 123, 148, 0.79)
+  );
+  /* color: #0a4150; */
 }
 .button_text {
   background: none;
   border: none;
   color: #fff;
+  transition: all 0.3s ease-in-out;
+}
+.button_text:hover {
+  color: #227b94;
 }
 
 @media (max-width: 840px) {

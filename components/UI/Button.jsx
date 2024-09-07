@@ -10,7 +10,6 @@ function Button(
   ref
 ) {
   let classCSS = styles.button;
-  console.log(classes);
 
   if (size) {
     let classSize = `button_${size}`;

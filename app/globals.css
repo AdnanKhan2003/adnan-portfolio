@@ -58,6 +58,18 @@ img {
   text-align: center;
   margin-bottom: 5rem;
 }
+.sticky {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0.5rem 10vw;
+  z-index: 234234232;
+}
+.background {
+  background-color: rgba(255, 246, 246, 0.9);
+}
 
 .button_dark {
   background-color: #227b94;
@@ -66,7 +78,7 @@ img {
   color: #fff;
 }
 .text_dark {
-  color: #444;
+  color: #444 !important;
 }
 
 @media (max-width: 800px) {
@@ -79,6 +91,9 @@ img {
   .container {
     width: 90%;
   }
+  .sticky {
+    padding: 0.6rem 5vw;
+  }
 }
 
 @media (max-width: 300px) {
@@ -87,5 +102,8 @@ img {
   }
   .section_title {
     font-size: 1.6rem;
+  }
+  .sticky {
+    padding: 0.6rem 2vw;
   }
 }

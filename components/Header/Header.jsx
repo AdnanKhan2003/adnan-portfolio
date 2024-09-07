@@ -10,10 +10,18 @@ import { navToggleActions } from "@/lib/features/navSlice.js";
 import logoImg from "@/img/icon.svg";
 import styles from "./Header.module.css";
 
-import { useState, useRef, forwardRef } from "react";
+import { useRef, forwardRef } from "react";
 
 function Header({ onClickScroll }, ref) {
-  const { headerRef, projectRef, educationRef, skillsRef, contactRef } = ref;
+  const {
+    headerRef,
+    projectRef,
+    educationRef,
+    skillsRef,
+    contactRef,
+    navRef,
+    resumeRef,
+  } = ref;
   const dispatch = useDispatch();
   const navOpen = useRef();
   const navClose = useRef();
@@ -21,6 +29,8 @@ function Header({ onClickScroll }, ref) {
   const { handleOpenNav, handleCloseNav } = navToggleActions;
 
   const isOpen = useSelector((state) => state.navToggle.isOpen);
+  const heroIsVisible = useSelector((state) => state.stickyNav.heroIsVisible);
+
   // const [isOpen, setIsOpen] = useState(false);
   const classNav = isOpen ? "nav_link_open" : "nav_link_close";
 
@@ -32,7 +42,13 @@ function Header({ onClickScroll }, ref) {
   }
 
   return (
-    <nav className={`${styles.nav} container`}>
+    <nav
+      ref={navRef}
+      className={`${
+        heroIsVisible ? `${styles.nav} container` : "sticky background"
+      } `}
+    >
+      {console.log(heroIsVisible)}
       <div className={`${styles.nav_left}`}>
         <Image className={`${styles.nav_left_logo}`} src={logoImg} alt="Logo" />
       </div>
@@ -100,6 +116,7 @@ function Header({ onClickScroll }, ref) {
 
       <div className={`${styles.nav_right}`}>
         <Button
+          ref={resumeRef}
           size="med"
           text="button_text"
           navigateto="https://drive.google.com/file/d/1vNRZm60IrIddLwEKGk12y88OzH5TxCKh/view?usp=sharing"

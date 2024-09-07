@@ -1,0 +1,12 @@
+.project_img_container {
+  border-bottom: 1px solid #ccc;
+}
+.project_item_img {
+  object-fit: cover;
+}
+
+@media (max-width: 658px) {
+  .project_img_container {
+    width: 100%;
+  }
+}

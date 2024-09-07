@@ -1,31 +1,7 @@
-.project_img_container {
-  border-bottom: 1px solid #ccc;
-}
 .project_item {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   border: 1px solid #ccc;
   border-radius: 0.3rem;
-}
-.project_item_img {
-  object-fit: cover;
-}
-.project_item_btn_container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  padding: 1rem 1rem 0.6rem 1rem;
-}
-.project_content {
-  padding: 1rem 1rem 0.6rem 1rem;
-  width: 100%;
-  flex-grow: 1;
-}
-
-@media (max-width: 658px) {
-  .project_img_container {
-    width: 100%;
-  }
 }

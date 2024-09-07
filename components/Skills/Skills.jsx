@@ -1,3 +1,7 @@
+"use client";
+
+import { AnimatePresence, motion } from "framer-motion";
+
 import SkillsItem from "./Skills Item/SkillsItem";
 import styles from "./Skills.module.css";
 import Image from "next/image";
@@ -111,12 +115,21 @@ const MY_SKILLS = [
 function Skills() {
   return (
     <section className={`section`}>
-      <h1 className={`section_title`}>Skills</h1>
+      <motion.h1
+        initial={{ x: -191, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ type: "tween", duration: 0.6 }}
+        className={`section_title`}
+      >
+        Skills
+      </motion.h1>
 
       <ul className={`${styles.skills} container`}>
-        {MY_SKILLS.map((skill) => (
-          <SkillsItem key={skill.id} items={skill} Icon={IconHtml} />
-        ))}
+        <AnimatePresence>
+          {MY_SKILLS.map((skill) => (
+            <SkillsItem key={skill.id} items={skill} Icon={IconHtml} />
+          ))}
+        </AnimatePresence>
       </ul>
       {/* <SkillsItem /> */}
     </section>

@@ -1,0 +1,27 @@
+.hero_content_img_container {
+  margin-right: 3rem;
+}
+.hero_content_img {
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+@media (max-width: 840px) {
+  .hero_content_img_container {
+    margin-right: 0;
+  }
+
+  .hero_content img {
+    height: 241px;
+  }
+}
+@media (max-width: 500px) {
+  .hero_content_img {
+    height: 160px;
+  }
+}
+@media (max-width: 300px) {
+  .hero_content_img {
+    height: 159px;
+  }
+}

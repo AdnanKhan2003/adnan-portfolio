@@ -1,6 +1,7 @@
+"use client";
+
 import ProjectItem from "./Project Item/ProjectItem";
 import styles from "./Project.module.css";
-import Img from "@/img/icon.svg";
 
 import ProAE from "@/img/Ae.jpeg";
 import ProTech from "@/img/TechKareer.jpeg";
@@ -9,6 +10,8 @@ import ProBankist from "@/img/Bankist.jpeg";
 import ProBL from "@/img/proBootstrap.jpeg";
 import ProMapty from "@/img/Mapty.jpeg";
 import ProForkify from "@/img/Forkify.jpeg";
+
+import { motion } from "framer-motion";
 
 const MY_PROJECTS = [
   {
@@ -83,25 +86,17 @@ const MY_PROJECTS = [
   },
 ];
 
-// const MY_PROJECTS = [
-//   {
-//     id: "p1",
-//     title: "Yo1",
-//     description: "This is yo 1",
-//     image: Img,
-//   },
-//   {
-//     id: "p2",
-//     title: "Yo2",
-//     description: "This is yo 2",
-//     image: Img,
-//   },
-// ];
-
 function Projects() {
   return (
     <section className={`section`}>
-      <h1 className={`section_title`}>Projects</h1>
+      <motion.h1
+        initial={{ x: -191, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ type: "tween", duration: 0.6 }}
+        className={`section_title`}
+      >
+        Projects
+      </motion.h1>
 
       <ul className={`${styles.projects} container`}>
         {MY_PROJECTS.map((project) => (

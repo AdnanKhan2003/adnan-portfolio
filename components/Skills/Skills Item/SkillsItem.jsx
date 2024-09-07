@@ -1,14 +1,18 @@
-import Image from "next/image";
+import { motion } from "framer-motion";
+import SkillsItemContent from "./SkillsItemContent";
+
 import styles from "./SkillsItem.module.css";
 
 function SkillsItem({ Icon, items }) {
   return (
-    <article className={styles.skill_item}>
-      <div className={`${styles.skill_item_img_container}`}>
-        <Image src={items.Icon || Icon} alt={items.skillName} />
-      </div>
-      <h3 className={styles.skills}>{items.skillName}</h3>
-    </article>
+    <motion.article
+      initial={{ y: 30, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ type: "tween", duration: 1 }}
+      className={styles.skill_item}
+    >
+      <SkillsItemContent Icon={Icon} items={items} />
+    </motion.article>
   );
 }
 

@@ -1,19 +1,20 @@
-import Link from "next/link";
-import Image from "next/image";
+"use client";
+
+import { motion } from "framer-motion";
 
 import styles from "./EducationItem.module.css";
+import EducationItemContent from "./EducationItemContent";
 
 function EducationItem({ items, Icon }) {
   return (
-    <article className={`${styles.education_item}`}>
-      <div className={`${styles.education_img_container}`}>
-        <Icon />
-      </div>
-      <div className="education_content">
-        <h1 className={`${styles.education_title}`}>{items.courseName}</h1>
-        <p className={`${styles.education_description}`}>{items.totalYears}</p>
-      </div>
-    </article>
+    <motion.article
+      initial={{ y: 91, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ type: "tween", duration: 0.6 }}
+      className={`${styles.education_item}`}
+    >
+      <EducationItemContent items={items} Icon={Icon} />
+    </motion.article>
   );
 }
 

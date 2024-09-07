@@ -1,21 +1,22 @@
-import Image from "next/image";
+"use client";
 
+import ContactItemContent from "./ContactItemContent";
+
+import { motion } from "framer-motion";
 import styles from "./ContactItem.module.css";
-import logo from "@/img/HTML.png";
-import Link from "next/link";
 
-function ContactItem({ items, Icon }) {
+function ContactItem({ items }) {
   return (
-    <div className={`${styles.contact_container}`}>
+    <motion.div
+      initial={{ y: 91, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ type: "tween", duration: 0.6 }}
+      className={`${styles.contact_container}`}
+    >
       <div classNmae={`${styles.contact_items}`}>
-        <Link href={items.link || ""}>
-          <p className={`${styles.contact_icon_container}`}>
-            <Image src={items.Icon} alt={items.title} />
-          </p>
-          <p>{items.title}</p>
-        </Link>
+        <ContactItemContent items={items} />
       </div>
-    </div>
+    </motion.div>
   );
 }
 

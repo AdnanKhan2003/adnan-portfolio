@@ -1,0 +1,35 @@
+.education_img_container svg {
+  margin-right: 1rem;
+  width: 62px;
+  height: 62px;
+}
+.education_title {
+  font-size: 1.8rem;
+}
+.education_description {
+  font-size: 1.2rem;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+@media (max-width: 800px) {
+  .education_title {
+    font-size: 1.6rem;
+  }
+  .education_description {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 500px) {
+  .education_title {
+    font-size: 1.4rem;
+  }
+  .education_description {
+    font-size: 0.98rem;
+  }
+}
+@media (max-width: 300px) {
+  .education_img_container svg {
+    width: 32px;
+    height: 32px;
+  }
+}

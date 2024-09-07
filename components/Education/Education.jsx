@@ -1,5 +1,7 @@
 "use client";
 
+import { AnimatePresence, motion } from "framer-motion";
+
 import EducationItem from "./Education Item/EducationItem";
 import SchoolIcon from "@mui/icons-material/School";
 
@@ -23,18 +25,27 @@ const MY_EDUCATION = [
 function Education() {
   return (
     <section className={`section`}>
-      <h1 className={`section_title ${styles.education_title}`}>Education</h1>
+      <motion.h1
+        initial={{ x: -191, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ type: "tween", duration: 0.6 }}
+        className={`section_title ${styles.education_title}`}
+      >
+        Education
+      </motion.h1>
 
       <ul className={`${styles.education} container`}>
         <div className={`${styles.dot} ${styles.dot_1}`}></div>
         <div className={`${styles.dot} ${styles.dot_2}`}></div>
-        {MY_EDUCATION.map((education) => (
-          <EducationItem
-            key={education.id}
-            items={education}
-            Icon={SchoolIcon}
-          />
-        ))}
+        <AnimatePresence>
+          {MY_EDUCATION.map((education) => (
+            <EducationItem
+              key={education.id}
+              items={education}
+              Icon={SchoolIcon}
+            />
+          ))}
+        </AnimatePresence>
       </ul>
     </section>
   );

@@ -1,3 +1,7 @@
+"use client";
+
+import { motion } from "framer-motion";
+
 import styles from "./Contact.module.css";
 import ContactItem from "./Contact Item/ContactItem";
 
@@ -35,7 +39,14 @@ const MY_CONTACTS = [
 function Contact() {
   return (
     <section className={`section_spacing`}>
-      <h1 className={`section_title`}>Contact</h1>
+      <motion.h1
+        initial={{ x: -191, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ type: "tween", duration: 0.6 }}
+        className={`section_title`}
+      >
+        Contact
+      </motion.h1>
 
       <ul className={`${styles.contacts_container} container`}>
         {MY_CONTACTS.map((contact) => (

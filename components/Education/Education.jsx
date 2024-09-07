@@ -24,7 +24,7 @@ const MY_EDUCATION = [
 
 function Education() {
   return (
-    <section className={`section`}>
+    <section id="education" className={`section`}>
       <motion.h1
         initial={{ x: -191, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}

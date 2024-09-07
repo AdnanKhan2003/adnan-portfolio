@@ -114,7 +114,7 @@ const MY_SKILLS = [
 
 function Skills() {
   return (
-    <section className={`section`}>
+    <section id="skills" className={`section`}>
       <motion.h1
         initial={{ x: -191, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}

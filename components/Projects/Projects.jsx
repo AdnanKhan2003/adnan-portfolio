@@ -88,7 +88,7 @@ const MY_PROJECTS = [
 
 function Projects() {
   return (
-    <section className={`section`}>
+    <section id="projects" className={`section`}>
       <motion.h1
         initial={{ x: -191, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}

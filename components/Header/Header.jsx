@@ -7,9 +7,10 @@ import Button from "../UI/Button";
 import logoImg from "@/img/icon.svg";
 import styles from "./Header.module.css";
 
-import { useState, useRef } from "react";
+import { useState, useRef, forwardRef } from "react";
 
-function Header() {
+function Header({ onClickScroll }, ref) {
+  const { headerRef, projectRef, educationRef, skillsRef, contactRef } = ref;
   const open = useRef();
   const close = useRef();
   const navLinks = useRef();
@@ -35,6 +36,8 @@ function Header() {
           <div className={`${styles.close_line} ${styles.close_line_2}`}></div>
         </div>
         <Button
+          onClick={() => onClickScroll("header")}
+          ref={headerRef}
           size="med"
           text="button_text"
           navigateto=""
@@ -43,6 +46,8 @@ function Header() {
           Home
         </Button>
         <Button
+          onClick={() => onClickScroll("projects")}
+          ref={projectRef}
           size="med"
           text="button_text"
           navigateto=""
@@ -51,6 +56,8 @@ function Header() {
           Projects
         </Button>
         <Button
+          onClick={() => onClickScroll("education")}
+          ref={educationRef}
           size="med"
           text="button_text"
           navigateto=""
@@ -59,14 +66,18 @@ function Header() {
           Education
         </Button>
         <Button
+          onClick={() => onClickScroll("skills")}
+          ref={skillsRef}
           size="med"
           text="button_text"
           navigateto=""
           classes={`${styles.nav_middle_list}`}
         >
-          About
+          Skills
         </Button>
         <Button
+          onClick={() => onClickScroll("contacts")}
+          ref={contactRef}
           size="med"
           text="button_text"
           navigateto=""
@@ -99,4 +110,4 @@ function Header() {
   );
 }
 
-export default Header;
+export default forwardRef(Header);

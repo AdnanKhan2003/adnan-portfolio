@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { forwardRef } from "react";
 
 import styles from "./Contact.module.css";
 import ContactItem from "./Contact Item/ContactItem";
@@ -36,9 +37,9 @@ const MY_CONTACTS = [
   },
 ];
 
-function Contact() {
+function Contact(props, ref) {
   return (
-    <section id="contact" className={`section_spacing`}>
+    <section ref={ref} id="contact" className={`section_spacing`}>
       <motion.h1
         initial={{ x: -191, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
@@ -57,4 +58,4 @@ function Contact() {
   );
 }
 
-export default Contact;
+export default forwardRef(Contact);

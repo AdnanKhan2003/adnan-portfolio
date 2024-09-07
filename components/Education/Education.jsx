@@ -1,6 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
+import { forwardRef } from "react";
 
 import EducationItem from "./Education Item/EducationItem";
 import SchoolIcon from "@mui/icons-material/School";
@@ -22,9 +23,9 @@ const MY_EDUCATION = [
   },
 ];
 
-function Education() {
+function Education(props, ref) {
   return (
-    <section id="education" className={`section`}>
+    <section ref={ref} id="education" className={`section`}>
       <motion.h1
         initial={{ x: -191, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
@@ -51,4 +52,4 @@ function Education() {
   );
 }
 
-export default Education;
+export default forwardRef(Education);

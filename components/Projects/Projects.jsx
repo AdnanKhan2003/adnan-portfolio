@@ -12,6 +12,7 @@ import ProMapty from "@/img/Mapty.jpeg";
 import ProForkify from "@/img/Forkify.jpeg";
 
 import { motion } from "framer-motion";
+import { forwardRef } from "react";
 
 const MY_PROJECTS = [
   {
@@ -86,9 +87,9 @@ const MY_PROJECTS = [
   },
 ];
 
-function Projects() {
+function Projects(props, ref) {
   return (
-    <section id="projects" className={`section`}>
+    <section ref={ref} id="projects" className={`section`}>
       <motion.h1
         initial={{ x: -191, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
@@ -107,4 +108,4 @@ function Projects() {
   );
 }
 
-export default Projects;
+export default forwardRef(Projects);

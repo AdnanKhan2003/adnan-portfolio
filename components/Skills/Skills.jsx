@@ -1,6 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
+import { forwardRef } from "react";
 
 import SkillsItem from "./Skills Item/SkillsItem";
 import styles from "./Skills.module.css";
@@ -112,9 +113,9 @@ const MY_SKILLS = [
   },
 ];
 
-function Skills() {
+function Skills(props, ref) {
   return (
-    <section id="skills" className={`section`}>
+    <section ref={ref} id="skills" className={`section`}>
       <motion.h1
         initial={{ x: -191, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
@@ -136,4 +137,4 @@ function Skills() {
   );
 }
 
-export default Skills;
+export default forwardRef(Skills);

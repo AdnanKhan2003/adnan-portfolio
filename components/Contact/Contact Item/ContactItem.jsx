@@ -13,7 +13,7 @@ function ContactItem({ items }) {
       transition={{ type: "tween", duration: 0.6 }}
       className={`${styles.contact_container}`}
     >
-      <div classNmae={`${styles.contact_items}`}>
+      <div className={`${styles.contact_items}`}>
         <ContactItemContent items={items} />
       </div>
     </motion.div>

@@ -4,6 +4,9 @@ import Link from "next/link";
 import Image from "next/image";
 import Button from "../UI/Button";
 
+import { useSelector, useDispatch } from "react-redux";
+import { navToggleActions } from "@/lib/features/navSlice.js";
+
 import logoImg from "@/img/icon.svg";
 import styles from "./Header.module.css";
 
@@ -11,17 +14,21 @@ import { useState, useRef, forwardRef } from "react";
 
 function Header({ onClickScroll }, ref) {
   const { headerRef, projectRef, educationRef, skillsRef, contactRef } = ref;
-  const open = useRef();
-  const close = useRef();
+  const dispatch = useDispatch();
+  const navOpen = useRef();
+  const navClose = useRef();
   const navLinks = useRef();
-  const [isOpen, setIsOpen] = useState(false);
+  const { handleOpenNav, handleCloseNav } = navToggleActions;
+
+  const isOpen = useSelector((state) => state.navToggle.isOpen);
+  // const [isOpen, setIsOpen] = useState(false);
   const classNav = isOpen ? "nav_link_open" : "nav_link_close";
 
-  function handleOpenNav() {
-    setIsOpen(true);
+  function handleOpenNavbar() {
+    dispatch(handleOpenNav());
   }
-  function handleCloseNav() {
-    setIsOpen(false);
+  function handleCloseNavbar() {
+    dispatch(handleCloseNav());
   }
 
   return (
@@ -31,7 +38,11 @@ function Header({ onClickScroll }, ref) {
       </div>
 
       <ul ref={navLinks} className={`${styles.nav_middle} ${styles[classNav]}`}>
-        <div onClick={handleCloseNav} ref={close} className={`${styles.close}`}>
+        <div
+          onClick={handleCloseNavbar}
+          ref={navClose}
+          className={`${styles.close}`}
+        >
           <div className={`${styles.close_line} ${styles.close_line_1}`}></div>
           <div className={`${styles.close_line} ${styles.close_line_2}`}></div>
         </div>
@@ -97,8 +108,8 @@ function Header({ onClickScroll }, ref) {
           Resume
         </Button>
         <div
-          ref={open}
-          onClick={handleOpenNav}
+          ref={navOpen}
+          onClick={handleOpenNavbar}
           className={styles.line_container}
         >
           <div className={`${styles.line}`}></div>

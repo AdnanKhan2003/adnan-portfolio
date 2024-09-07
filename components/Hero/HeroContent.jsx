@@ -20,7 +20,7 @@ function HeroContent() {
         collaborations so feel free to contact me.
       </p>
       <Button
-        navigateTo="https://drive.google.com/file/d/1vNRZm60IrIddLwEKGk12y88OzH5TxCKh/view?usp=sharing"
+        navigateto="https://drive.google.com/file/d/1vNRZm60IrIddLwEKGk12y88OzH5TxCKh/view?usp=sharing"
         size="big"
       >
         Resume

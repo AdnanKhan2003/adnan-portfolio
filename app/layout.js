@@ -1,4 +1,5 @@
 import "./globals.css";
+import { StoreProvider } from "@/lib/StoreProvider";
 
 export const metadata = {
   title: "Adnan Khan",
@@ -7,8 +8,10 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body>{children}</body>
-    </html>
+    <StoreProvider>
+      <html lang="en">
+        <body>{children}</body>
+      </html>
+    </StoreProvider>
   );
 }

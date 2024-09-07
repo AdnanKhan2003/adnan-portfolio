@@ -4,6 +4,8 @@ import Header from "@/components/Header/Header.jsx";
 import Hero from "@/components/Hero/Hero.jsx";
 
 import { useRef } from "react";
+import { useDispatch } from "react-redux";
+import { navToggleActions } from "@/lib/features/navSlice";
 
 import styles from "./page.module.css";
 import Projects from "@/components/Projects/Projects.jsx";
@@ -12,6 +14,7 @@ import Skills from "@/components/Skills/Skills.jsx";
 import Contact from "@/components/Contact/Contact.jsx";
 
 export default function Home() {
+  const dispatch = useDispatch();
   const headerElement = useRef();
   const projectsElement = useRef();
   const educationElement = useRef();
@@ -24,21 +27,26 @@ export default function Home() {
   const skillsBtn = useRef();
   const contactBtn = useRef();
 
+  function handleClickToScroll(element, id) {
+    element.current?.scrollIntoView({ behavior: "smooth" });
+    dispatch(navToggleActions.handleCloseNav());
+  }
+
   function handleClickScroll(elementId) {
     if (elementId === "header") {
-      headerElement.current?.scrollIntoView({ behavior: "smooth" });
+      handleClickToScroll(headerElement);
     }
     if (elementId === "projects") {
-      projectsElement.current?.scrollIntoView({ behavior: "smooth" });
+      handleClickToScroll(projectsElement);
     }
     if (elementId === "education") {
-      educationElement.current?.scrollIntoView({ behavior: "smooth" });
+      handleClickToScroll(educationElement);
     }
     if (elementId === "skills") {
-      skillsElement.current?.scrollIntoView({ behavior: "smooth" });
+      handleClickToScroll(skillsElement);
     }
     if (elementId === "contacts") {
-      contactElement.current?.scrollIntoView({ behavior: "smooth" });
+      handleClickToScroll(contactElement);
     }
   }
 

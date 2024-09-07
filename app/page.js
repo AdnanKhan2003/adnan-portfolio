@@ -6,7 +6,7 @@ import Hero from "@/components/Hero/Hero.jsx";
 import { useEffect, useRef } from "react";
 import { useDispatch } from "react-redux";
 import { navToggleActions } from "@/lib/features/navSlice";
-import { stickyNavActions } from "@/lib/features/stickynavSlice";
+import { stickyNavActions } from "@/lib/features/stickynavSlice.js";
 
 import styles from "./page.module.css";
 import Projects from "@/components/Projects/Projects.jsx";

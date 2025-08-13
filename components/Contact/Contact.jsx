@@ -15,7 +15,7 @@ const MY_CONTACTS = [
   {
     id: "c1",
     title: "LinkedIn",
-    link: "https://www.linkedin.com/in/adnan-khan-3a7aa6228/",
+    link: "https://www.linkedin.com/in/adnan--khan/",
     Icon: logoLinkedIn,
   },
   {
